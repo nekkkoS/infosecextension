@@ -1,0 +1,78 @@
+{
+  "name": "infosecextension",
+  "displayName": "InfoSecExtension",
+  "publisher": "AlexNekko",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "test-extension.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "test-extension.showCurrentWorkspace",
+        "title": "Show Current Workspace"
+      },
+      {
+        "command": "test-extension.runScan",
+        "title": "Run Scan Lib"
+      },
+      {
+        "command": "test-extension.runScanCode",
+        "title": "Run Scan Code"
+      },
+      {
+        "command": "test-extension.addScanScript",
+        "title": "Add Scan Script"
+      },
+      {
+        "command": "test-extension.installAuditjs",
+        "title": "Install audit"
+      },
+      {
+        "command": "test-extension.installESlint",
+        "title": "Install eslint"
+      },
+      {
+        "command": "test-extension.ESlintInit",
+        "title": "Eslint init"
+      },
+      {
+        "command": "test-extension.InstallESPlugins",
+        "title": "Install Eslint plugins"
+      },
+      {
+        "command": "test-extension.addESlintconfig",
+        "title": "Add Eslint Config"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test",
+    "scan": "auditjs ossi --json > lib_problems.json"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.85.0",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8",
+    "eslint": "^8.55.0",
+    "eslint-plugin-no-unsanitized": "^4.0.2",
+    "eslint-plugin-security": "^1.7.1",
+    "eslint-plugin-sonarjs": "^0.23.0",
+    "eslint-plugin-xss": "^0.1.12",
+    "typescript": "^5.3.2"
+  }
+}
